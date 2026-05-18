@@ -1,0 +1,52 @@
+namespace: ps-dashboard
+
+backend:
+  image:
+    repository: ghcr.io/ssafy15-data/study-dashboard-backend
+    tag: latest
+    pullPolicy: IfNotPresent
+  replicas: 1
+  port: 8000
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "100m"
+    limits:
+      memory: "256Mi"
+      cpu: "500m"
+
+frontend:
+  image:
+    repository: ghcr.io/ssafy15-data/study-dashboard-frontend
+    tag: latest
+    pullPolicy: IfNotPresent
+  replicas: 1
+  port: 80
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "128Mi"
+      cpu: "200m"
+
+config:
+  githubOwner: "ssafy15-data"
+  githubRepo: "python_codingtest"
+  studyMembers: "dong99u,JiseokLee0106,minjun069,hyo-4,holmane333,kjin5341-blip,us4c0d3,watermell0n"
+  refreshIntervalMinutes: "15"
+  corsOrigins: "*"
+
+secret:
+  githubToken: ""
+
+ingress:
+  enabled: true
+  className: traefik
+  host: dashboard.example.com
+  tls: false
+  tlsSecretName: ""
+
+redis:
+  enabled: false
+

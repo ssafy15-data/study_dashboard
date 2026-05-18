@@ -1,0 +1,11 @@
+ingress:
+  host: dashboard.example.com
+
+backend:
+  image:
+    tag: "latest"  # backend-tag
+
+frontend:
+  image:
+    tag: "latest"  # frontend-tag
+

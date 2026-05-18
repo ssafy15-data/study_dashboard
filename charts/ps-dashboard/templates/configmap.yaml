@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "ps-dashboard.fullname" . }}-config
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "ps-dashboard.labels" . | nindent 4 }}
+data:
+  GITHUB_OWNER: {{ .Values.config.githubOwner | quote }}
+  GITHUB_REPO: {{ .Values.config.githubRepo | quote }}
+  STUDY_MEMBERS: {{ .Values.config.studyMembers | quote }}
+  REFRESH_INTERVAL_MINUTES: {{ .Values.config.refreshIntervalMinutes | quote }}
+  CORS_ORIGINS: {{ .Values.config.corsOrigins | quote }}
+

@@ -1,0 +1,12 @@
+PS Study Dashboard has been deployed.
+
+Host:
+  {{- if .Values.ingress.enabled }}
+  http://{{ .Values.ingress.host }}
+  {{- else }}
+  Ingress is disabled.
+  {{- end }}
+
+Backend health:
+  /api/health
+
