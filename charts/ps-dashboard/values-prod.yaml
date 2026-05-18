@@ -3,9 +3,9 @@ ingress:
 
 backend:
   image:
-    tag: "latest"  # backend-tag
+    tag: "e020523d282466b0d29d48dc4692d25797d2c9b6"  # backend-tag
 
 frontend:
   image:
-    tag: "latest"  # frontend-tag
+    tag: "e020523d282466b0d29d48dc4692d25797d2c9b6"  # frontend-tag
 
